@@ -12,13 +12,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var text: TextView
 
     //View Model Object
-    lateinit var mainViewModel: MainActivityView
+    lateinit var mainViewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainViewModel = ViewModelProvider(this).get(MainActivityView::class.java)
+        mainViewModel = ViewModelProvider(this,MainActivityViewModelFactory(9)).get(MainActivityViewModel::class.java)
 
         button = findViewById(R.id.incrementBTN)
         button.setOnClickListener {

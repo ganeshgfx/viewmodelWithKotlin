@@ -2,8 +2,8 @@ package com.example.viewmodelwithkotlin
 
 import androidx.lifecycle.ViewModel
 
-class MainActivityView: ViewModel() {
-    var count = 0
+class MainActivityViewModel(val initialValue:Int): ViewModel() {
+    var count = initialValue
     fun increaseCount() {
         count++
     }
